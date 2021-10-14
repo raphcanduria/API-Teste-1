@@ -1,0 +1,47 @@
+﻿@model Produtos
+@{
+    ViewData["Title"] = "EditaProduto";
+    Layout = "~/Views/Shared/_produtosLayout.cshtml";
+}
+
+<h1>Edita Produto</h1>
+<h1><a asp-action="Index" class="btn btn-sm btn-success">Voltar</a></h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Codigo"></label>
+        <input class="form-control" asp-for="Codigo" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Descricao"></label>
+        <input class="form-control" asp-for="Descricao" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Estoque"></label>
+        <input class="form-control" asp-for="Estoque" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Preco"></label>
+        <input class="form-control" asp-for="Preco" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Atualizar</button>
+    </div>
+</form>
+@if (ViewBag.Result == "Ok!")
+{
+    <h2>Produtos</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead><tr><th>Código</th><th>Descrição</th><th>Estoque</th><th>Preço</th></tr></thead>
+        <tbody>
+            <tr>
+                <td>@Model.Codigo</td>
+                <td>@Model.Descricao</td>
+                <td>@Model.Estoque</td>
+                <td>@Model.Preco</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+

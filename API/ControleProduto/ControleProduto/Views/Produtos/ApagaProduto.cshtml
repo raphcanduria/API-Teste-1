@@ -1,0 +1,11 @@
+﻿@model Produtos
+@{
+    ViewData["Title"] = "ApagaProdutos";
+    Layout = "~/Views/Shared/_produtosLayout.cshtml";
+}
+
+<form asp-action="ApagaProduto" method="post">
+    <input type="hidden" value="@Model.Codigo" name="Codigo" />
+    <input type="image" src="/icon/close.png" />
+</form>
+
